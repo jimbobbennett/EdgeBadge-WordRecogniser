@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_EPD",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_TinyUSB_Library/src",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_WavePlayer_Library",
+                "/Users/jimbennett/Documents/Arduino/libraries/SdFat_-_Adafruit_Fork/src",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_SPIFlash/src",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_ImageReader_Library",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_ST7735_and_ST7789_Library",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_Unified_Sensor",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_LIS3DH",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_TouchScreen",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_NeoPixel",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_GFX_Library",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_Arcada_Library",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_Zero_PDM_Library",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_ZeroTimer_Library",
+                "/Users/jimbennett/Documents/Arduino/libraries/Arduino_TensorFlowLite/src",
+                "/Users/jimbennett/Documents/Arduino/libraries/Adafruit_TensorFlow_Lite",
+                "/Users/jimbennett/Library/Arduino15/packages/adafruit/hardware/samd/1.5.11/**"
+            ],
+            "forcedInclude": [
+                "/Users/jimbennett/Library/Arduino15/packages/adafruit/hardware/samd/1.5.11/cores/arduino/Arduino.h"
+            ],
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ],
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

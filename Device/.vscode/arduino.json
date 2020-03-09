@@ -1,0 +1,7 @@
+{
+    "board": "adafruit:samd:adafruit_pybadge_m4",
+    "configuration": "cache=on,speed=180,opt=fastest,maxqspi=50,usbstack=tinyusb,debug=off",
+    "output": "/Users/jimbennett/ArduinoBuilds/EdgeBadge-NumberRecogniser/build",
+    "port": "/dev/cu.usbmodem144101",
+    "sketch": "micro_speech_arcada.ino"
+}
