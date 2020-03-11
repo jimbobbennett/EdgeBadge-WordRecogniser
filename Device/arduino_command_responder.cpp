@@ -60,11 +60,11 @@ void RespondToCommand(tflite::ErrorReporter *error_reporter,
 
             ImageReturnCode stat = arcada.drawBMP(file_name, 0, 0);
             if(stat == IMAGE_ERR_FILE_NOT_FOUND) {
-                Serial.printf("File not found");
+                Serial.printf("File not found\n");
             } else if(stat == IMAGE_ERR_FORMAT) {
-                Serial.printf("Not a supported BMP variant.");
+                Serial.printf("Not a supported BMP variant.\n");
             } else if(stat == IMAGE_ERR_MALLOC) {
-                Serial.printf("Malloc failed (insufficient RAM).");  
+                Serial.printf("Malloc failed (insufficient RAM).\n");  
             }
             //arcada.drawBMP("0.bmp", 0, 0);            
             
