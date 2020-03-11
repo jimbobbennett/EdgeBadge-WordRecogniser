@@ -229,6 +229,7 @@ void loop() {
   TfLiteStatus invoke_status = interpreter->Invoke();
   if (invoke_status != kTfLiteOk) {
     error_reporter->Report("Invoke failed");
+    Serial.printf("Invoke failed\n");
     return;
   }
 

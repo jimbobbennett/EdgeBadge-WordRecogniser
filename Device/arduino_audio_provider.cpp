@@ -186,7 +186,7 @@ void CaptureSamples() {
   g_latest_audio_timestamp = time_in_ms;
 
   int peak = (max_audio - min_audio);
-  Serial.printf("pp %d\n", peak);
+  //Serial.printf("pp %d\n", peak);
   //int normalized = map(peak, 20, 2000, 0, 65535);
   //arcada.pixels.setPixelColor(0, arcada.pixels.gamma32(arcada.pixels.ColorHSV(normalized)));
   //arcada.pixels.show();
