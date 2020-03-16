@@ -1,4 +1,4 @@
 {
     "board": "adafruit:samd:adafruit_pybadge_m4",
-    "configuration": "cache=on,speed=120,opt=small,maxqspi=50,usbstack=arduino,debug=off"
+    "configuration": "cache=on,speed=180,opt=fastest,maxqspi=50,usbstack=tinyusb,debug=off"
 }

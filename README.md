@@ -120,6 +120,27 @@ The notebook has a number of sections, each documented so read the notebook to s
 
 From the Jupyter notebooks:
 
+1. The first cell defines the words the model should be trained for.
+
+    ```python
+    # A comma-delimited list of the words you want to train for.
+    # The options are: yes,no,up,down,left,right,on,off,stop,go
+    # All other words will be used to train an "unknown" category.
+    os.environ["WANTED_WORDS"] = "zero,one,two,three,four,five,six,seven,eight,nine"
+    ```
+
+    The data set supports the following words:
+
+    |      |       |       |      |
+    | ---- | ----- | ----- | ---- |
+    | Yes  | No    | Up    | Down |
+    | Left | Right | On    | Off  |
+    | Stop | Go    | Zero  | One  |
+    | Two  | Three | Four  | Five |
+    | Six  | Seven | Eight | Nine |
+
+    The notebook is set to train for numbers, but if you want to change the words it is trained for, change the array.
+
 1. Select **Run** from the top menu for each cell to run them one at a time, or select **Cell -> Run All** to run all the cells. The training step will take 1.5-2 hours to run.
 
 1. Once the steps have all finished, head back to ML Studio, select **Compute** from the left-hand menu, check the box next to your compute and select **Stop** to stop the compute.
@@ -172,9 +193,29 @@ To talk to Adafruit boards, the Arduino IDE needs to be configured to know how t
     1. Arduino TensorFlowLite
     1. SdFat - Adafruit Fork (make sure to install the Adafruit fork, not the original SdFat)
 
+#### Configure the board
+
+1. Connect your EdgeBadge to your computer via USB and make sure the device is switched on
+
+1. From the command palette, select *Arduino: Board Configuration*
+
+1. Select the following settings:
+
+    | Setting        | Value                                |
+    | -------------- | ------------------------------------ |
+    | Selected board | Adafruit pyBadge M4 Express (SAMD51) |
+    | Cache          | Enabled                              |
+    | CPU Speed      | 180 MHz (overclock)                  |
+    | Optimize       | Fastest (-Ofast)                     |
+    | Max QSPI       | 50 MHz (standard)                    |
+    | USB Stack      | TinyUSB                              |
+    | Debug          | Off                                  |
+
+1. From the command palette, select *Arduino: Select serial port* and select the port the EdgeBadge is plugged into. On macOS it will be named something like `/dev/cu.usbmodem<xxx>` where `<xxx>` is a number. On Windows it will be called `COM<x>` where `<x>` is a number.
+
 ### Load the code
 
-The code for the edge badge is in the [Device](./Device) folder. Clone this repo and open this folder in Visual Studio Code. Connect your EdgeBadge to your computer via USB and make sure the device is switched on.
+The code for the edge badge is in the [word_recognizer](./word_recognizer) folder. Clone this repo and open this folder in Visual Studio Code.
 
 
 
