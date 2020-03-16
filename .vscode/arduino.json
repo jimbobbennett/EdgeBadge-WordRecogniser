@@ -1,0 +1,4 @@
+{
+    "board": "adafruit:samd:adafruit_pybadge_m4",
+    "configuration": "cache=on,speed=120,opt=small,maxqspi=50,usbstack=arduino,debug=off"
+}
