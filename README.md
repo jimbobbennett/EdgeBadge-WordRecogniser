@@ -86,7 +86,7 @@ The compute will be created a spun up.
 
 You can find the notebook in the Releases in this GitHub repository. Use this link to download the notebook:
 
-[word-recognizer-training.ipynb](https://github.com/jimbobbennett/EdgeBadge-WordRecogniser/releases/download/1.0/word-recognizer-training.ipynb).
+[word-recognizer-training.ipynb](https://github.com/jimbobbennett/EdgeBadge-WordRecogniser/releases/download/v1.0/word-recognizer-training.ipynb).
 
 Once you've downloaded the notebook, you need to upload it to ML Studio.
 
