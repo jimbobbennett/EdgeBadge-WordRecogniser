@@ -226,6 +226,8 @@ The code contains images and a model that can recognize two words, 'Stop' and 'G
 
 1. Once the device reboots, say the words 'Stop' and 'Go', and the board will show an image for the word you have said.
 
+Select the image below to see a video of this in action.
+
 [![The badge responding to stop](https://img.youtube.com/vi/Z0XiTjXCOdk/0.jpg)](https://www.youtube.com/watch?v=Z0XiTjXCOdk)
 
 ### Use your own model
