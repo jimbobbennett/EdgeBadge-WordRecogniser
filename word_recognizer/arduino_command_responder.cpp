@@ -42,10 +42,16 @@ void RespondToCommand(tflite::ErrorReporter *error_reporter,
         error_reporter->Report("Heard %s (%d) @%dms", found_command, score,
                                current_time);
 
-        if (found_command[0] == 's' || found_command[0] == 'u')
+        if (found_command[0] == '_')
         {
-            Serial.printf("Silence - doing nothing\n");
-            // Silence or unknown - do nothing
+            if (found_command[1] == 's')
+            {
+                Serial.printf("Silence - doing nothing\n");
+            }
+            else if (found_command[1] == 'u')
+            {
+                Serial.printf("Unknown word - doing nothing\n");
+            }
         }
         else
         {
@@ -66,10 +72,6 @@ void RespondToCommand(tflite::ErrorReporter *error_reporter,
             } else if(stat == IMAGE_ERR_MALLOC) {
                 Serial.printf("Malloc failed (insufficient RAM).\n");  
             }
-            //arcada.drawBMP("0.bmp", 0, 0);            
-            
-            // arcada.pixels.fill(arcada.pixels.Color(0, 50, 0));
-            // arcada.pixels.show();
         }
     }
 

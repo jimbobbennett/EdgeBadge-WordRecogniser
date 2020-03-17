@@ -23,8 +23,8 @@ limitations under the License.
 // };
 
 const char* kCategoryLabels[kCategoryCount] = {
-    "silence",
-    "unknown",
+    "_silence",
+    "_unknown",
     "Stop",
     "Go"
 };

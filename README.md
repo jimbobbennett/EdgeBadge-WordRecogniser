@@ -1,4 +1,4 @@
-# EdgeBadge Number Recognizer
+# EdgeBadge Word Recognizer
 
 AI has traditionally been the realm of expensive computers, with models trained and run on GPUs and other expensive hardware. More recently this has started to change with a move towards TinyML - small machine learning models that are trained on the expensive hardware, but run on smaller, cheaper devices including the low power micro-controllers that run IoT and maker devices.
 
@@ -10,7 +10,7 @@ This device is based off their PyBadge device - a board with a screen, game styl
 
 You can find the demo on [Adafruit Learn](https://learn.adafruit.com/tensorflow-lite-for-edgebadge-kit-quickstart).
 
-I thought it would be fun to repurpose this example and learn how to retrain the board to recognize numbers instead of yes and no.
+I thought it would be fun to repurpose this example and learn how to retrain the board to recognize 'Stop' and 'Go' instead of yes and no.
 
 ## Train the model
 
@@ -86,7 +86,7 @@ The compute will be created a spun up.
 
 You can find the notebook in the Releases in this GitHub repository. Use this link to download the notebook:
 
-[word-recognizer-training.ipynb](https://github.com/jimbobbennett/EdgeBadge-NumberRecogniser/releases/download/1.0/word-recognizer-training.ipynb).
+[word-recognizer-training.ipynb](https://github.com/jimbobbennett/EdgeBadge-WordRecogniser/releases/download/1.0/word-recognizer-training.ipynb).
 
 Once you've downloaded the notebook, you need to upload it to ML Studio.
 
@@ -124,9 +124,8 @@ From the Jupyter notebooks:
 
     ```python
     # A comma-delimited list of the words you want to train for.
-    # The options are: yes,no,up,down,left,right,on,off,stop,go
     # All other words will be used to train an "unknown" category.
-    os.environ["WANTED_WORDS"] = "zero,one,two,three,four,five,six,seven,eight,nine"
+    os.environ["WANTED_WORDS"] = "stop,go"
     ```
 
     The data set supports the following words:
@@ -139,7 +138,7 @@ From the Jupyter notebooks:
     | Two  | Three | Four  | Five |
     | Six  | Seven | Eight | Nine |
 
-    The notebook is set to train for numbers, but if you want to change the words it is trained for, change the array.
+    The notebook is set to train for 'Stop' and 'Go', but if you want to change the words it is trained for, change the array.
 
 1. Select **Run** from the top menu for each cell to run them one at a time, or select **Cell -> Run All** to run all the cells. The training step will take 1.5-2 hours to run.
 
@@ -213,9 +212,49 @@ To talk to Adafruit boards, the Arduino IDE needs to be configured to know how t
 
 1. From the command palette, select *Arduino: Select serial port* and select the port the EdgeBadge is plugged into. On macOS it will be named something like `/dev/cu.usbmodem<xxx>` where `<xxx>` is a number. On Windows it will be called `COM<x>` where `<x>` is a number.
 
-### Load the code
+### Compile the code
 
 The code for the edge badge is in the [word_recognizer](./word_recognizer) folder. Clone this repo and open this folder in Visual Studio Code.
 
+The code contains images and a model that can recognize two words, 'Stop' and 'Go'.
 
+1. Double tap the **Reset** button on the back of the EdgeBadge to put it into the boot loader ready to program
+
+    ![EdgeBadge in bootloader mode](./images/BootLoader.png)
+
+1. From the command palette, select *Arduino: Upload*. The code will be compiled and uploaded to the board.
+
+1. Once the device reboots, say the words 'Stop' and 'Go', and the board will show an image for the word you have said.
+
+### Use your own model
+
+If you want to use your own model trained using Azure ML Studio, you will need to update the code to use this model, and provide image files.
+
+#### Upload image files
+
+1. Create bitmaps for each word that you are detecting, named in the format `<word>.bmp`. For example, if you trained the model for 'Yes' and 'No' you will need `Yes.bmp` and `No.bmp`. These files must be 24-bit bitmaps at a size of 160x128. The best tools to use to create these is good old-fashioned MS Paint on Windows or ImageMagik on macOS.
+
+1. Reset the EdgeBadge. It will mount on your computer with a disk called **CIRCUITPY**
+
+1. Copy the bitmaps into this drive
+
+#### Update the code
+
+1. Open `micro_features_micro_model_settings.cpp`
+
+1. Update `kCategoryLabels` to include the words the model was trained on. Keep `"silence"` and `"unknown"` at the start of the array, and put the words after in the order they were specified in the notebook. Ensure the casing of the words matches the names of the bitmaps created earlier.
+
+    > The words **HAVE** to be in the same order as the notebook or the wrong word will be detected
+
+1. Open `micro_features_micro_model_settings.h
+
+1. Update `kCategoryCount` to be 2 higher than the number of words you trained the model for, so that it is the same as the size of the `kCategoryLabels` array. For example if you trained it for 'Yes' and 'No', set `kCategoryCount` to `4`.
+
+1. Open `micro_features_tiny_conv_micro_features_model_data.cpp`
+
+1. Replace the contents of the `g_tiny_conv_micro_features_model_data` array with the values from `__content_tiny_conv_tflite` in the `tiny_conv.cc` file downloaded from the Azure ML Studio notebook
+
+1. Replace the value of `g_tiny_conv_micro_features_model_data_len` with the value of `__content_tiny_conv_tflite_len` from the `tiny_conv.cc` file downloaded from the Azure ML Studio notebook
+
+1. Use the steps above to compile and deploy this new code to the device, then test it out.
 
