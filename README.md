@@ -1,4 +1,4 @@
-# EdgeBadge Word Recognizer
+# Recognizing words on a microcontroller using TinyML
 
 AI has traditionally been the realm of expensive computers, with models trained and run on GPUs and other expensive hardware. More recently this has started to change with a move towards TinyML - small machine learning models that are trained on the expensive hardware, but run on smaller, cheaper devices including the low power micro-controllers that run IoT and maker devices.
 
