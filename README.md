@@ -18,21 +18,21 @@ The yes/no detection model is a TensorFlow model, created using an example from 
 
 You can find the original TensorFlow example in the [TensorFlow GitHub repo](https://github.com/tensorflow/docs/blob/master/site/en/r1/tutorials/sequences/audio_recognition.md).
 
-I trained my new model using the [Azure Machine Learning Studio](https://azure.microsoft.com/services/machine-learning/#product-overview/?WT.mc_id=aiapril-github-jabenn), a service that allows you to build and train models using cloud compute, then either host them in the cloud or download them for use offline.
+I trained my new model using the [Azure Machine Learning Studio](https://azure.microsoft.com/services/machine-learning/?WT.mc_id=academic-0000-jabenn#product-overview/?WT.mc_id=aiapril-github-jabenn), a service that allows you to build and train models using cloud compute, then either host them in the cloud or download them for use offline.
 
 ### Create an Azure account
 
 To use Azure services you will need an Azure subscription. If you don't have a subscription you can sign up for free.
 
-* If you are a student aged 18 and up and have an email address from an academic institution, you can sign up for the free Azure for Students offer at [azure.microsoft.com/free/students](https://azure.microsoft.com/free/students/?WT.mc_id=aiapril-github-jabenn) without a credit card. At the time of writing this gives you $100 of credit to use over 12 months, as well as free tiers of a number of services for that 2 months. At the end of the 12 months, if you are still a student you can renew and get another $100 in credit and 12 months of free services.
+* If you are a student aged 18 and up and have an email address from an academic institution, you can sign up for the free Azure for Students offer at [azure.microsoft.com/free/students](https://azure.microsoft.com/free/students/?WT.mc_id=academic-0000-jabenn) without a credit card. At the time of writing this gives you $100 of credit to use over 12 months, as well as free tiers of a number of services for that 2 months. At the end of the 12 months, if you are still a student you can renew and get another $100 in credit and 12 months of free services.
 
-* If you are not a student, you can sign up at [azure.microsoft.com/free](https://azure.microsoft.com/free/?WT.mc_id=aiapril-github-jabenn). You will need a credit card for verification purposes only, you will not be billed unless you decide to upgrade your account to a paid offering. At the time of writing the free account will give you US$200 of free credit to spend on what you like in the first 30 days, 12 months of free services, plus a load of services that have tiers that are always free.
+* If you are not a student, you can sign up at [azure.microsoft.com/free](https://azure.microsoft.com/free/?WT.mc_id=academic-0000-jabenn). You will need a credit card for verification purposes only, you will not be billed unless you decide to upgrade your account to a paid offering. At the time of writing the free account will give you US$200 of free credit to spend on what you like in the first 30 days, 12 months of free services, plus a load of services that have tiers that are always free.
 
 ### Create a Machine Learning resource
 
 Before you can use the Azure Machine Learning (ML) Studio, you need to spin up a Machine Learning resource. This is created in your Azure subscription but then can be shared with other developers so that you can all share the same ML Studio workspace.
 
-1. Open the [Azure portal](https://portal.azure.com/?WT.mc_id=aiapril-github-jabenn)
+1. Open the [Azure portal](https://portal.azure.com/?WT.mc_id=academic-0000-jabenn)
 
 1. Select **Create a resource** then search for `Machine Learning`. Select **Machine Learning** then select **Create**.
 
@@ -54,7 +54,7 @@ The resource will be created.
 
 Now that the Machine Learning resource has been created, you can use it from ML Studio.
 
-1. Open ML Studio at [ml.azure.com](https://ml.azure.com/?WT.mc_id=aiapril-github-jabenn)
+1. Open ML Studio at [ml.azure.com](https://ml.azure.com/?WT.mc_id=academic-0000-jabenn)
 
 1. Log in with your Azure account, then select your directory, subscription and the workspace you just created
 
@@ -68,7 +68,7 @@ The TensorFlow example uses a Jupyter notebook to train the model. For this, I u
 
 To run a notebook, you need compute - a machine allocated to run the training. This compute is paid for based on the time it's running and the power of the machine, the more powerful, the more you pay per minute.
 
-> You can see the pricing per hour on the [Machine Learning pricing page](https://azure.microsoft.com/pricing/details/machine-learning/?WT.mc_id=aiapril-github-jabenn)
+> You can see the pricing per hour on the [Machine Learning pricing page](https://azure.microsoft.com/pricing/details/machine-learning/?WT.mc_id=academic-0000-jabenn)
 
 1. Select **Compute** from the left-hand menu
 
@@ -158,7 +158,7 @@ It takes a bit of setup to be able to program Adafruit devices using C++. The Ar
 
 #### Install the tools
 
-1. Install [Visual Studio Code](https://code.visualstudio.com/Download/?WT.mc_id=aiapril-github-jabenn)
+1. Install [Visual Studio Code](https://code.visualstudio.com/Download/?WT.mc_id=academic-0000-jabenn)
 
 1. Install the [Arduino IDE](https://www.arduino.cc/en/Main/Software) - **NOTE** On Windows DO NOT install using the Windows store, instead use the *Windows Installer, for Windows XP and up*.
 
